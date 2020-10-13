@@ -6,11 +6,16 @@ import 'package:research_package/model.dart';
 ///
 
 List<RPImageChoice> images = [
-  RPImageChoice.withParams(Image.asset('assets/images/very-sad.png'), 0, 'Feeling very sad'),
-  RPImageChoice.withParams(Image.asset('assets/images/sad.png'), 0, 'Feeling sad'),
-  RPImageChoice.withParams(Image.asset('assets/images/ok.png'), 0, 'Feeling ok'),
-  RPImageChoice.withParams(Image.asset('assets/images/happy.png'), 0, 'Feeling happy'),
-  RPImageChoice.withParams(Image.asset('assets/images/very-happy.png'), 0, 'Feeling very happy'),
+  RPImageChoice.withParams(
+      Image.asset('assets/images/very-sad.png'), 0, 'Feeling very sad'),
+  RPImageChoice.withParams(
+      Image.asset('assets/images/sad.png'), 0, 'Feeling sad'),
+  RPImageChoice.withParams(
+      Image.asset('assets/images/ok.png'), 0, 'Feeling ok'),
+  RPImageChoice.withParams(
+      Image.asset('assets/images/happy.png'), 0, 'Feeling happy'),
+  RPImageChoice.withParams(
+      Image.asset('assets/images/very-happy.png'), 0, 'Feeling very happy'),
 ];
 
 List<RPChoice> joyfulActivities = [
@@ -62,26 +67,34 @@ List<RPChoice> alphabet = [
 /// ANSWER FORMATS
 ///
 
-RPBooleanAnswerFormat yesNoAnswerFormat = RPBooleanAnswerFormat.withParams("Yes", "No");
-RPImageChoiceAnswerFormat imageChoiceAnswerFormat = RPImageChoiceAnswerFormat.withParams(images);
-RPIntegerAnswerFormat nrOfCigarettesAnswerFormat = RPIntegerAnswerFormat.withParams(0, 200, "cigarettes");
-RPChoiceAnswerFormat who5AnswerFormat = RPChoiceAnswerFormat.withParams(ChoiceAnswerStyle.SingleChoice, who5Choices);
+RPBooleanAnswerFormat yesNoAnswerFormat =
+    RPBooleanAnswerFormat.withParams("Yes", "No");
+RPImageChoiceAnswerFormat imageChoiceAnswerFormat =
+    RPImageChoiceAnswerFormat.withParams(images);
+RPIntegerAnswerFormat nrOfCigarettesAnswerFormat =
+    RPIntegerAnswerFormat.withParams(0, 200, "cigarettes");
+RPChoiceAnswerFormat who5AnswerFormat = RPChoiceAnswerFormat.withParams(
+    ChoiceAnswerStyle.SingleChoice, who5Choices);
 RPChoiceAnswerFormat joyfulActivitiesAnswerFormat =
-    RPChoiceAnswerFormat.withParams(ChoiceAnswerStyle.MultipleChoice, joyfulActivities);
-RPChoiceAnswerFormat numbersAnswerFormat = RPChoiceAnswerFormat.withParams(ChoiceAnswerStyle.MultipleChoice, numbers);
-RPChoiceAnswerFormat alphabetAnswerFormat = RPChoiceAnswerFormat.withParams(ChoiceAnswerStyle.MultipleChoice, alphabet);
-RPChoiceAnswerFormat instrumentsAnswerFormat =
-    RPChoiceAnswerFormat.withParams(ChoiceAnswerStyle.SingleChoice, instruments);
-RPIntegerAnswerFormat minutesIntegerAnswerFormat = RPIntegerAnswerFormat.withParams(0, 10000, "minutes");
-RPChoiceAnswerFormat guitarAnswerFormat =
-    RPChoiceAnswerFormat.withParams(ChoiceAnswerStyle.MultipleChoice, guitarReasons);
+    RPChoiceAnswerFormat.withParams(
+        ChoiceAnswerStyle.MultipleChoice, joyfulActivities);
+RPChoiceAnswerFormat numbersAnswerFormat =
+    RPChoiceAnswerFormat.withParams(ChoiceAnswerStyle.MultipleChoice, numbers);
+RPChoiceAnswerFormat alphabetAnswerFormat =
+    RPChoiceAnswerFormat.withParams(ChoiceAnswerStyle.MultipleChoice, alphabet);
+RPChoiceAnswerFormat instrumentsAnswerFormat = RPChoiceAnswerFormat.withParams(
+    ChoiceAnswerStyle.SingleChoice, instruments);
+RPIntegerAnswerFormat minutesIntegerAnswerFormat =
+    RPIntegerAnswerFormat.withParams(0, 10000, "minutes");
+RPChoiceAnswerFormat guitarAnswerFormat = RPChoiceAnswerFormat.withParams(
+    ChoiceAnswerStyle.MultipleChoice, guitarReasons);
 
 ///
 /// STEPS
 ///
 
-RPQuestionStep smokingQuestionStep =
-    RPQuestionStep.withAnswerFormat("smokingQuestionId", "Do you smoke?", yesNoAnswerFormat);
+RPQuestionStep smokingQuestionStep = RPQuestionStep.withAnswerFormat(
+    "smokingQuestionId", "Do you smoke?", yesNoAnswerFormat);
 
 RPQuestionStep imageChoiceQuestionStep = RPQuestionStep.withAnswerFormat(
   "imageStepID",
@@ -90,7 +103,9 @@ RPQuestionStep imageChoiceQuestionStep = RPQuestionStep.withAnswerFormat(
 );
 
 RPQuestionStep nrOfCigarettesQuestionStep = RPQuestionStep.withAnswerFormat(
-    "nrOfCigarettesQuestionStepID", "How many cigarettes do you smoke a day?", nrOfCigarettesAnswerFormat);
+    "nrOfCigarettesQuestionStepID",
+    "How many cigarettes do you smoke a day?",
+    nrOfCigarettesAnswerFormat);
 
 RPInstructionStep instructionStep = RPInstructionStep(
   identifier: "instructionID",
@@ -123,19 +138,27 @@ RPQuestionStep alphabetQuestionStep = RPQuestionStep.withAnswerFormat(
   alphabetAnswerFormat,
 );
 
-RPInstructionStep instructionStepA =
-    RPInstructionStep(identifier: "instructionStepAID", title: "A", detailText: "A detail")..text = "text";
-RPInstructionStep instructionStepB =
-    RPInstructionStep(identifier: "instructionStepBID", title: "B", detailText: "B detail")..text = "text";
-RPInstructionStep instructionStepC =
-    RPInstructionStep(identifier: "instructionStepCID", title: "C", detailText: "C detail")..text = "text";
-RPInstructionStep instructionStepD =
-    RPInstructionStep(identifier: "instructionStepDID", title: "D", detailText: "D detail")..text = "text";
+RPInstructionStep instructionStepA = RPInstructionStep(
+    identifier: "instructionStepAID", title: "A", detailText: "A detail")
+  ..text = "text";
+RPInstructionStep instructionStepB = RPInstructionStep(
+    identifier: "instructionStepBID", title: "B", detailText: "B detail")
+  ..text = "text";
+RPInstructionStep instructionStepC = RPInstructionStep(
+    identifier: "instructionStepCID", title: "C", detailText: "C detail")
+  ..text = "text";
+RPInstructionStep instructionStepD = RPInstructionStep(
+    identifier: "instructionStepDID", title: "D", detailText: "D detail")
+  ..text = "text";
 
 RPQuestionStep instrumentChoiceQuestionStep = RPQuestionStep.withAnswerFormat(
-    "instrumentChoiceQuestionStepID", "Which instrument are you playing?", instrumentsAnswerFormat);
+    "instrumentChoiceQuestionStepID",
+    "Which instrument are you playing?",
+    instrumentsAnswerFormat);
 RPQuestionStep minutesQuestionStep = RPQuestionStep.withAnswerFormat(
-    "minutesQuestionStepID", "How many minutes do you spend practicing a week?", minutesIntegerAnswerFormat);
+    "minutesQuestionStepID",
+    "How many minutes do you spend practicing a week?",
+    minutesIntegerAnswerFormat);
 RPFormStep formStep = RPFormStep.withTitle(
   "formstepID",
   [instrumentChoiceQuestionStep, minutesQuestionStep],
@@ -144,7 +167,9 @@ RPFormStep formStep = RPFormStep.withTitle(
 );
 
 RPQuestionStep guitarChoiceQuestionStep = RPQuestionStep.withAnswerFormat(
-    "guitarChoiceQuestionStepID", "Why did you start playing the guitar?", guitarAnswerFormat);
+    "guitarChoiceQuestionStepID",
+    "Why did you start playing the guitar?",
+    guitarAnswerFormat);
 
 RPCompletionStep completionStep = RPCompletionStep("completionID")
   ..title = "Finished"
@@ -154,67 +179,89 @@ RPCompletionStep completionStep = RPCompletionStep("completionID")
 /// PREDICATES
 ///
 
-RPResultPredicate singleChoicePredicate = RPResultPredicate.forChoiceQuestionResult(
-    resultSelector: RPResultSelector.forStepId("singleChoiceQuestionStepID"),
-    expectedValue: [5],
-    choiceQuestionResultPredicateMode: ChoiceQuestionResultPredicateMode.ExactMatch);
+RPResultPredicate singleChoicePredicate =
+    RPResultPredicate.forChoiceQuestionResult(
+        resultSelector:
+            RPResultSelector.forStepId("singleChoiceQuestionStepID"),
+        expectedValue: [5],
+        choiceQuestionResultPredicateMode:
+            ChoiceQuestionResultPredicateMode.ExactMatch);
 
-RPResultPredicate exactMultiChoicePredicate = RPResultPredicate.forChoiceQuestionResult(
-    resultSelector: RPResultSelector.forStepId("multiChoiceQuestionStepID1"),
-    expectedValue: [0, 6],
-    choiceQuestionResultPredicateMode: ChoiceQuestionResultPredicateMode.ExactMatch);
+RPResultPredicate exactMultiChoicePredicate =
+    RPResultPredicate.forChoiceQuestionResult(
+        resultSelector:
+            RPResultSelector.forStepId("multiChoiceQuestionStepID1"),
+        expectedValue: [0, 6],
+        choiceQuestionResultPredicateMode:
+            ChoiceQuestionResultPredicateMode.ExactMatch);
 
-RPResultPredicate containingMultiChoicePredicate = RPResultPredicate.forChoiceQuestionResult(
-    resultSelector: RPResultSelector.forStepId("multiChoiceQuestionStepID2"),
-    expectedValue: [1],
-    choiceQuestionResultPredicateMode: ChoiceQuestionResultPredicateMode.Containing);
+RPResultPredicate containingMultiChoicePredicate =
+    RPResultPredicate.forChoiceQuestionResult(
+        resultSelector:
+            RPResultSelector.forStepId("multiChoiceQuestionStepID2"),
+        expectedValue: [1],
+        choiceQuestionResultPredicateMode:
+            ChoiceQuestionResultPredicateMode.Containing);
 
-RPResultPredicate yesSmokingPredicate = RPResultPredicate.forBooleanQuestionResult(
-    resultSelector: RPResultSelector.forStepId("smokingQuestionId"), expectedValue: true);
+RPResultPredicate yesSmokingPredicate =
+    RPResultPredicate.forBooleanQuestionResult(
+        resultSelector: RPResultSelector.forStepId("smokingQuestionId"),
+        expectedValue: true);
 
-RPResultPredicate noSmokingPredicate = RPResultPredicate.forBooleanQuestionResult(
-    resultSelector: RPResultSelector.forStepId("smokingQuestionId"), expectedValue: false);
+RPResultPredicate noSmokingPredicate =
+    RPResultPredicate.forBooleanQuestionResult(
+        resultSelector: RPResultSelector.forStepId("smokingQuestionId"),
+        expectedValue: false);
 
-RPResultPredicate instrumentChoicePredicate = RPResultPredicate.forChoiceQuestionResult(
-    resultSelector: RPResultSelector.forStepIdInFormStep("instrumentChoiceQuestionStepID"),
-    expectedValue: [1],
-    choiceQuestionResultPredicateMode: ChoiceQuestionResultPredicateMode.ExactMatch);
+RPResultPredicate instrumentChoicePredicate =
+    RPResultPredicate.forChoiceQuestionResult(
+        resultSelector: RPResultSelector.forStepIdInFormStep(
+            "instrumentChoiceQuestionStepID"),
+        expectedValue: [1],
+        choiceQuestionResultPredicateMode:
+            ChoiceQuestionResultPredicateMode.ExactMatch);
 
 ///
 /// NAVIGATION RULES
 ///
 
-RPPredicateStepNavigationRule smokingNavigationRule = RPPredicateStepNavigationRule(
+RPPredicateStepNavigationRule smokingNavigationRule =
+    RPPredicateStepNavigationRule(
   {
     noSmokingPredicate: imageChoiceQuestionStep.identifier,
   },
 );
 
-RPPredicateStepNavigationRule singleChoiceNavigationRule = RPPredicateStepNavigationRule(
+RPPredicateStepNavigationRule singleChoiceNavigationRule =
+    RPPredicateStepNavigationRule(
   {
     singleChoicePredicate: imageChoiceQuestionStep.identifier,
   },
 );
 
-RPPredicateStepNavigationRule exactMultiChoiceNavigationRule = RPPredicateStepNavigationRule(
+RPPredicateStepNavigationRule exactMultiChoiceNavigationRule =
+    RPPredicateStepNavigationRule(
   {
     exactMultiChoicePredicate: imageChoiceQuestionStep.identifier,
   },
 );
 
-RPPredicateStepNavigationRule containingMultiChoiceNavigationRule = RPPredicateStepNavigationRule(
+RPPredicateStepNavigationRule containingMultiChoiceNavigationRule =
+    RPPredicateStepNavigationRule(
   {
     containingMultiChoicePredicate: imageChoiceQuestionStep.identifier,
   },
 );
 
-RPPredicateStepNavigationRule guitarNavigationRule = RPPredicateStepNavigationRule(
+RPPredicateStepNavigationRule guitarNavigationRule =
+    RPPredicateStepNavigationRule(
   {
     instrumentChoicePredicate: smokingQuestionStep.identifier,
   },
 );
 
-RPStepReorganizerRule alphabetReorganizerRule = RPStepReorganizerRule(alphabetQuestionStep.identifier, {
+RPStepReorganizerRule alphabetReorganizerRule =
+    RPStepReorganizerRule(alphabetQuestionStep.identifier, {
   3: instructionStepD.identifier,
   2: instructionStepC.identifier,
   1: instructionStepB.identifier,
@@ -228,29 +275,35 @@ RPStepReorganizerRule alphabetReorganizerRule = RPStepReorganizerRule(alphabetQu
 RPNavigableOrderedTask navigableSurveyTask = RPNavigableOrderedTask(
   "NavigableTaskID",
   [
-//    instructionStep,
-//    formStep,
-//    guitarChoiceQuestionStep,
-//    smokingQuestionStep,
+    instructionStep,
+    formStep,
+    guitarChoiceQuestionStep,
+    smokingQuestionStep,
     alphabetQuestionStep,
     instructionStepA,
     instructionStepB,
     instructionStepC,
     instructionStepD,
-//    nrOfCigarettesQuestionStep,
-//    multiChoiceQuestionStep1,
+    nrOfCigarettesQuestionStep,
+    multiChoiceQuestionStep1,
     multiChoiceQuestionStep2,
-//    singleChoiceQuestionStep,
+    singleChoiceQuestionStep,
     imageChoiceQuestionStep,
-//    completionStep,
+    completionStep,
   ],
 )
-  ..setNavigationRuleForTriggerStepIdentifier(smokingNavigationRule, smokingQuestionStep.identifier)
-  ..setNavigationRuleForTriggerStepIdentifier(singleChoiceNavigationRule, singleChoiceQuestionStep.identifier)
-  ..setNavigationRuleForTriggerStepIdentifier(exactMultiChoiceNavigationRule, multiChoiceQuestionStep1.identifier)
-  ..setNavigationRuleForTriggerStepIdentifier(guitarNavigationRule, formStep.identifier)
-  ..setNavigationRuleForTriggerStepIdentifier(containingMultiChoiceNavigationRule, multiChoiceQuestionStep2.identifier)
-  ..setNavigationRuleForTriggerStepIdentifier(alphabetReorganizerRule, alphabetQuestionStep.identifier);
+  ..setNavigationRuleForTriggerStepIdentifier(
+      smokingNavigationRule, smokingQuestionStep.identifier)
+  ..setNavigationRuleForTriggerStepIdentifier(
+      singleChoiceNavigationRule, singleChoiceQuestionStep.identifier)
+  ..setNavigationRuleForTriggerStepIdentifier(
+      exactMultiChoiceNavigationRule, multiChoiceQuestionStep1.identifier)
+  ..setNavigationRuleForTriggerStepIdentifier(
+      guitarNavigationRule, formStep.identifier)
+  ..setNavigationRuleForTriggerStepIdentifier(
+      containingMultiChoiceNavigationRule, multiChoiceQuestionStep2.identifier)
+  ..setNavigationRuleForTriggerStepIdentifier(
+      alphabetReorganizerRule, alphabetQuestionStep.identifier);
 
 //RPDirectStepNavigationRule navigationRuleAfterSmokingResult =
 //    RPDirectStepNavigationRule(imageChoiceQuestionStep.identifier);

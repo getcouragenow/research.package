@@ -1,21 +1,11 @@
-#.DEFAULT_GOAL := help
 
-include ./gitr.mk
+SHARED_FSPATH=./../shared
+BOILERPLATE_FSPATH=$(SHARED_FSPATH)/boilerplate
 
-GO_PATH=$(shell go env GOPATH)
-MAGE=go run mage.go
-mage:
+include $(BOILERPLATE_FSPATH)/help.mk
+include $(BOILERPLATE_FSPATH)/os.mk
+include $(BOILERPLATE_FSPATH)/gitr.mk
+# will add a tool for making docs work with hugo later
 
-	go mod tidy
-	${MAGE} -l
-
-.PHONY: help
-help:
-	@grep -E '^[a-zA-Z_-]+:.*?## .*$$' $(MAKEFILE_LIST) | sort | awk 'BEGIN {FS = ":.*?## "}; {printf "\033[36m%-30s\033[0m %s\n", $$1, $$2}'
-
-define print-target
-    @printf "Executing target: \033[36m$@\033[0m\n"
-endef
-
-
-
+# use branch: https://github.com/getcouragenow/research.package/tree/enter-consideration
+override GITR_BRANCH_NAME=enter-consideration
